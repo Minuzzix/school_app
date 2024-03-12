@@ -1,0 +1,76 @@
+.container{
+    margin: 1.5rem;
+}
+
+.form.group{
+	margin: 1.5rem auto;
+}
+
+.form-control > label{
+	display: block;
+}
+
+.form-control{
+	margin-bottom: 1rem;
+}
+
+input, textarea, select{
+	width: 100%;
+}
+
+input, select{
+	height: 2rem;
+}
+
+.btn-create{
+	width: 5rem;
+	height: 2.8rem;
+	background-color: purple;
+	color: white;
+}
+
+.action{
+	text-align: right;
+}
+
+.title{
+    color: purple;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table{
+    margin: 1rem auto;
+    width: 60rem;
+}
+
+table, td, th{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead{
+    background-color: purple;
+    color: white;
+}
+
+tbody{
+    background-color: white;
+}
+
+tfoot{
+    background-color: grey;
+    color: white;
+}
+
+td,th{
+    padding: 0.5rem;
+}
+
