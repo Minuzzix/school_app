@@ -16,6 +16,48 @@
       	<h3>Major Description : </h3>
       	<p th:text="${student.major.description}"></p>
         
+        
+        <h3 class="title">Current Teachers</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Fullname</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Role</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="teacher : ${student.teachers}">
+                    <td th:text="${teacher.id}"></td>
+                    <td th:text="${teacher.firstname}"></td>
+                    <td th:text="${teacher.lastname}"></td>
+                    <td th:text="${teacher.fullname}"></td>
+                    <td th:text="${teacher.email}"></td>
+                    <td th:text="${teacher.subject}"></td>
+                    <td th:text="${teacher.role}"></td>
+                   
+                </tr>
+               
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Fullname</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Role</th>
+                   
+                </tr>
+            </tfoot>
+        </table>
+        
     </div>
 </body>
 </html>

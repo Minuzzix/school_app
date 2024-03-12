@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hmi.school.entity.Student;
 import com.hmi.school.entity.Teacher;
@@ -54,5 +55,23 @@ public class TeacherController {
 		model.addAttribute("teacher", teacher);
 		return "assign-form";
 		
+	}
+	
+	@PostMapping("/assign")
+	public String assign(@RequestParam Long teacherId, @RequestParam Long studentId) {
+		Teacher teacher = teacherService.getTeacherById(teacherId);
+		Student student = studentService.getStudentById(studentId);
+		teacher.getStudents().add(student);
+		student.getTeachers().add(teacher);
+		teacherService.saveTeacher(teacher);
+		studentService.saveStudent(student);
+		return "redirect:/teacher/all";
+	}
+	
+	@GetMapping("/{teacherId}")
+	public String details(@PathVariable Long teacherId, Model model) {
+		Teacher teacher = teacherService.getTeacherById(teacherId);
+		model.addAttribute("teacher", teacher);
+		return "teacher-details";
 	}
 }
